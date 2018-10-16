@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 user_private_key=$1
 user=$2
 private_key_file=$HOME/.ssh/id_rsa
