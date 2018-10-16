@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 user_private_key=$1
 user=$2
 private_key_file=$HOME/.ssh/id_rsa
@@ -7,7 +6,7 @@ private_key_file=$HOME/.ssh/id_rsa
 if [ "$user_private_key" != "None" ] ; then
     echo "$user_private_key" > $private_key_file
     chmod 400 $private_key_file
-    cat $private_key_file
+
     eval "$(ssh-agent)"
     ssh-add $private_key_file
 
