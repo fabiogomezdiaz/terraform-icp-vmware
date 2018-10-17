@@ -12,6 +12,7 @@ if [ "$user_private_key" != "None" ] ; then
 
     if [[ $? -ne 0 ]]; then
     	echo "FAILED to add private ssh key"
+    	exit 1
     else
     	echo "SUCCESFULLY added private ssh key"
 	fi

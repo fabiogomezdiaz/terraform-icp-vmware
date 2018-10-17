@@ -5,6 +5,7 @@ if [ "$user_public_key" != "None" ] ; then
 
     if [[ $? -ne 0 ]]; then
     	echo "FAILED to add public ssh key"
+    	exit 1
     else
     	echo "SUCCESFULLY added public ssh key"
 	fi
