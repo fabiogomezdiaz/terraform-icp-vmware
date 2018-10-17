@@ -67,7 +67,7 @@ module "icpprovision" {
 
     hooks = {
       "cluster-preconfig" = [
-        "lsb_release -d | grep -qi Ubuntu && sudo apt-get update && sudo apt-get -y install --only-upgrade docker-ce || echo Redhat... Skipping docker ugprade"
+        "python -mplatform | grep -qi Ubuntu && sudo apt-get update && sudo apt-get -y install --only-upgrade docker-ce || echo Redhat... Skipping docker ugprade"
       ]
     }
 
