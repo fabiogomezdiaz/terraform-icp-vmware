@@ -65,12 +65,6 @@ module "icpprovision" {
       #"docker_password"                 = "${local.registry_creds != "" ? "${replace(local.registry_creds, "/.*:/", "")}" : "" }"
     }
 
-    hooks = {
-      "cluster-preconfig" = [
-        "python -mplatform | grep -qi Ubuntu && sudo apt-get update && sudo apt-get -y install --only-upgrade docker-ce || echo Redhat... Skipping docker ugprade"
-      ]
-    }
-
     # We will let terraform generate a new ssh keypair
     # for boot master to communicate with worker and proxy nodes
     # during ICP deployment
